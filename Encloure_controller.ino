@@ -19,9 +19,8 @@
 *                       Open");
 *   - temp. sensor      DS18B20
 *   - LCD               1602A (16x2) with I2C module
-	- Bluetooth module	HC-06 Bluetooth Module
+*   - Bluetooth module  HC-06 Bluetooth Module
 *******************************************************************************/
-//------------------------------------------------------------------------------
 #include <LiquidCrystal_I2C.h>
 #include <Wire.h>
 #include <OneWire.h>
@@ -54,9 +53,9 @@
 #define FAN_PWM_PIN                                                            9
 //! TimerOne library specific values used in calculations
 //! 100% - full duty cycle
-#define FULL_DUTY                                                    	     100
+#define FULL_DUTY                                                            100
 //! value @FULL_DUTY cycle
-#define	MAX_DUTY_VALUE                                              		1023
+#define MAX_DUTY_VALUE                                                      1023
 //! 16x2 LCD I2C address (detected by address scanner)
 #define LCD_I2C_ADDRESS                                                     0x27
 //! String literals for LCD
@@ -70,13 +69,13 @@
 //------------------------------------------------------------------------------
 //! Button control usage:
 //!     Using buttons user can set desired target temperature. Button
-//!		functionalities:
-//!			Button "Set" -  press once to manage tenth position for the
-//!						    temperature. Press twice to manage ones position.
-//!						    Pressing one more time while on ones position will
-//!						    apply configured target temperature.
-//!			Button "Up" -   Change temperature digit in ascending order.
-//!			Button "Down" - Change temperature digit in descending order.
+//!     functionalities:
+//!         Button "Set" -  press once to manage tenth position for the
+//!                         temperature. Press twice to manage ones position.
+//!                         Pressing one more time while on ones position will
+//!                         apply configured target temperature.
+//!         Button "Up" -   Change temperature digit in ascending order.
+//!         Button "Down" - Change temperature digit in descending order.
 //------------------------------------------------------------------------------
 //! API description for temperature setup via Bluetooth:
 //! Set target temperature (JSON request)
@@ -87,16 +86,16 @@
 //!     example: {"method":"setdestemp","params":[29]}
 //! Error on incorrect (out of range) temperature value:
 //!     {
-//!	        "method": "setdestemp",
+//!         "method": "setdestemp",
 //!         "destTemp": 76,
-//!	        "error": "Invalid target temperature. Valid range: 20-59"
+//!         "error": "Invalid target temperature. Valid range: 20-59"
 //!     }
 //! Warning on attempt to set new target temperature if controller is
 //! already in configuration mode
 //!     {
-//!	        "method": "setdestemp",
+//!         "method": "setdestemp",
 //!         "destTemp": 30,
-//!	        "warning": "Cannot set temperature as control unit is in
+//!         "warning": "Cannot set temperature as control unit is in
 //!                   configuration mode!"
 //!     }
 //------------------------------------------------------------------------------
