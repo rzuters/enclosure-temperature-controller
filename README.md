@@ -13,8 +13,8 @@ temperature which is supported accordingly in a range: +20...+59°.
 ## Used components
 
 - MCU				        Arduino Uno Rev3
-- fan               Noctua NF-P14s (12V);
-- relay             JQC-3FF-S-Z 5V (220V heater connected to "Normally Open");
+- fan               Noctua NF-P14s (12V)
+- relay             JQC-3FF-S-Z 5V (220V heater connected to "Normally Open")
 - temp. sensor      DS18B20
 - LCD               1602A (16x2) with I2C module
 - Bluetooth module	HC-06
